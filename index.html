@@ -3,10 +3,43 @@
 <head>
     <title>Þitt Fyrirtæki</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header .menu {
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>Velkomin(n) á vefsíðu fyrirtækisins</h1>
+        <div class="logo">LOGO</div>
+        <nav class="menu">
+            <a href="#">Valmöguleiki 1</a>
+            <a href="#">Valmöguleiki 2</a>
+            <a href="#">Valmöguleiki 3</a>
+        </nav>
     </header>
     <main>
         <p>Hér er smá texti um fyrirtækið...</p>
