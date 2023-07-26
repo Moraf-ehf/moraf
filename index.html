@@ -72,19 +72,26 @@
             display: flex;
             justify-content: space-between;
             padding: 20px;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .intro {
+            text-align: center;
         }
 
         .news {
             flex: 1;
-            margin-right: 20px;
+            margin-bottom: 20px;
         }
 
         .slideshow {
             flex: 1;
+            text-align: center;
         }
 
         .slideshow img {
-            width: 100%;
+            max-width: 50%;
         }
 
         footer {
@@ -112,9 +119,13 @@
         </nav>
     </header>
     <main>
+        <div class="intro">
+            <h1>Velkomin á síðu Móraf ehf.</h1>
+            <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
+        </div>
         <div class="news">
-            <h1 style="text-align: center;">Velkomin á síðu Móraf ehf.</h1>
-            <p style="text-align: center;">Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
+            <h2>Frétt dagsins</h2>
+            <p>Hér er smá texti um fyrirtækið...</p>
         </div>
         <div class="slideshow">
             <img src="mynd1.jpg" alt="Mynd 1">
