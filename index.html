@@ -10,38 +10,42 @@
             padding: 0;
         }
 
-        header {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #f8f8f8;
             padding: 20px;
+            flex-direction: column;
         }
 
-        header .logo img {
+        .header-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top .logo img {
             width: 10%;
         }
 
-        header .intro {
-            text-align: center;
-        }
-
-        header .menu {
+        .header-top .menu {
             display: flex;
             gap: 20px;
         }
 
-        header .menu a {
+        .header-top .menu a {
             color: #333;
             text-decoration: none;
         }
 
-        header .menu a:hover, header .menu a:focus {
+        .header-top .menu a:hover, .header-top .menu a:focus {
             color: #007BFF;
             text-decoration: none;
         }
 
-        header .menu a.active {
+        .header-top .menu a.active {
             font-weight: bold;
         }
 
@@ -111,26 +115,29 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
+    <div class="header-container">
+        <div class="header-top">
+            <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
+            <nav class="menu">
+                <a href="index.html" class="active">Heim</a>
+                <div class="dropdown">
+                    <a href="#">Verktaka</a>
+                    <div class="dropdown-content">
+                        <a href="#">Umsókn um verktöku</a>
+                        <a href="#">Fyrri verkefni</a>
+                    </div>
+                </div>
+                <a href="#">Starfsfólk</a>
+                <a href="#">Tenglar</a>
+                <a href="#">Innranet</a>
+            </nav>
+        </div>
         <div class="intro">
             <h1>Velkomin á síðu Móraf ehf.</h1>
             <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
+            <small>Þessi síða var hönnuð af chatgpt4 gervigreind.</small>
         </div>
-        <nav class="menu">
-            <a href="index.html" class="active">Heim</a>
-            <div class="dropdown">
-                <a href="#">Verktaka</a>
-                <div class="dropdown-content">
-                    <a href="#">Umsókn um verktöku</a>
-                    <a href="#">Fyrri verkefni</a>
-                </div>
-            </div>
-            <a href="#">Starfsfólk</a>
-            <a href="#">Tenglar</a>
-            <a href="#">Innranet</a>
-        </nav>
-    </header>
+    </div>
     <main>
         <div class="news">
             <h2>Frétt dagsins</h2>
@@ -144,7 +151,6 @@
     </main>
     <footer>
         <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470 , Allur réttur áskilinn.</p>
-        <small>Þessi síða var hönnuð af chatgpt4 gervigreind.</small>
     </footer>
 </body>
 </html>
