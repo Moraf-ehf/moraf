@@ -23,8 +23,33 @@
             gap: 20px;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         main {
             padding: 20px;
+            text-align: center;
         }
 
         footer {
@@ -42,7 +67,13 @@
         <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
         <nav class="menu">
             <a href="index.html">Heim</a>
-            <a href="#">Verktaka</a>
+            <div class="dropdown">
+                <button class="dropbtn">Verktaka</button>
+                <div class="dropdown-content">
+                    <a href="#">Umsókn um verktöku</a>
+                    <a href="#">Fyrri verkefni</a>
+                </div>
+            </div>
             <a href="#">Starfsfólk</a>
             <a href="#">Tenglar</a>
             <a href="#">Innranet</a>
@@ -50,10 +81,10 @@
     </header>
     <main>
         <p>Velkomin á síðu Móraf ehf.
-Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).  </p>
+        Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
     </main>
     <footer>
-        <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470 , Allur réttur áskilinn.</p>
+        <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470, Allur réttur áskilinn.</p>
     </footer>
 </body>
 </html>
