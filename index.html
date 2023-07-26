@@ -17,6 +17,8 @@
             background-color: #f8f8f8;
             padding: 20px;
             flex-direction: column;
+            height: 200px;
+            justify-content: flex-end;
         }
 
         .header-top {
@@ -150,7 +152,23 @@
     </main>
     <footer>
         <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470 , Allur réttur áskilinn.</p>
-        <small>Þessi síða var hönnuð af chatgpt4 gervigreind.</small>
+        <small>Þessi síða var hönnuð af chatgpt4 gervigreind</small>
     </footer>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+            } else {
+            dropdownContent.style.display = "block";
+            }
+            });
+        }
+    </script>
 </body>
 </html>
