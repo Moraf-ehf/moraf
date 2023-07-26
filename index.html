@@ -27,7 +27,7 @@
 
         header .site-menu a {
             text-decoration: none;
-            color: black;
+            color: gray;
         }
 
         header .site-menu a:hover {
@@ -47,6 +47,34 @@
             width: 100%;
             bottom: 0;
         }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
     </style>
 </head>
 <body>
@@ -54,7 +82,13 @@
         <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
         <nav class="site-menu">
             <a href="index.html">Heim</a>
-            <a href="#">Verktaka</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Verktaka</a>
+                <div class="dropdown-content">
+                    <a href="#">Umsókn um verktöku</a>
+                    <a href="#">Fyrri verkefni</a>
+                </div>
+            </div>
             <a href="#">Starfsfólk</a>
             <a href="#">Tenglar</a>
             <a href="#">Innranet</a>
