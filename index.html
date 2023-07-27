@@ -80,9 +80,10 @@
         }
 
         .images img {
-            width: 100%;
+            width: 100px;
             height: auto;
             margin-bottom: 20px;
+            cursor: pointer;
         }
 
         footer {
@@ -93,6 +94,43 @@
             position: absolute;
             bottom: 0;
             width: 100%;
+        }
+
+        /* Style for the modal image view */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -119,8 +157,8 @@
             <p>Hér er smá texti um fyrirtækið...</p>
             <hr>
             <div class="images">
-                <img src="20230725_134341.jpg" alt="Mynd 1">
-                <img src="20230722_175835.jpg" alt="Mynd 2">
+                <img id="myImg1" src="mynd1.jpg" alt="Mynd 1">
+                <img id="myImg2" src="mynd2.jpg" alt="Mynd 2">
             </div>
         </div>
     </main>
@@ -128,5 +166,34 @@
         <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470</p>
         <p><small>Þessi síða var hönnuð af chatgpt4 gervigreind</small></p>
     </footer>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the images and bind the onclick event
+        var images = document.getElementsByClassName("images")[0].getElementsByTagName("img");
+        for(let i=0; i<images.length; i++) {
+            let img = images[i];
+            img.onclick = function() {
+                modal.style.display = "block";
+                document.getElementById("img01").src = this.src;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
