@@ -8,47 +8,28 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .header-container {
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #f8f8f8;
             padding: 20px;
-            flex-direction: column;
-            height: 200px;
-            justify-content: flex-end;
-        }
-
-        .header-top {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .header-top .logo img {
             width: 10%;
         }
 
+        .header-top .intro {
+            text-align: center;
+        }
+
         .header-top .menu {
             display: flex;
             gap: 20px;
-        }
-
-        .header-top .menu a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .header-top .menu a:hover, .header-top .menu a:focus {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .header-top .menu a.active {
-            font-weight: bold;
         }
 
         .dropdown {
@@ -59,9 +40,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f1f1f1;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
 
@@ -72,106 +51,54 @@
             display: block;
         }
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
         main {
-            display: flex;
-            justify-content: space-between;
             padding: 20px;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .news {
-            flex: 1;
-            margin-bottom: 20px;
-        }
-
-        .slideshow {
-            flex: 1;
-            text-align: center;
-        }
-
-        .slideshow img {
-            max-width: 50%;
         }
 
         footer {
+            background-color: #f8f8f8;
             text-align: center;
             padding: 20px;
-            background-color: #ddd;
-            position: fixed;
+            position: absolute;
             bottom: 0;
             width: 100%;
-        }
-
-        footer small {
-            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
-<div class="header-top">
-    <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
-    <div class="intro">
-        <h1>Velkomin á síðu Móraf ehf.</h1>
-        <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
-    </div>
-    <nav class="menu">
-        <a href="index.html" class="active">Heim</a>
-        <div class="dropdown">
-            <a href="#">Verktaka</a>
-            <div class="dropdown-content">
-                <a href="#">Umsókn um verktöku</a>
-                <a href="#">Fyrri verkefni</a>
+    <header>
+        <div class="header-top">
+            <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
+            <div class="intro">
+                <h1>Velkomin á síðu Móraf ehf.</h1>
+                <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
             </div>
+            <nav class="menu">
+                <a href="index.html" class="active">Heim</a>
+                <div class="dropdown">
+                    <a href="#">Verktaka</a>
+                    <div class="dropdown-content">
+                        <a href="#">Umsókn um verktöku</a>
+                        <a href="#">Fyrri verkefni</a>
+                    </div>
+                </div>
+                <a href="#">Starfsfólk</a>
+                <a href="#">Tenglar</a>
+                <a href="#">Innranet</a>
+            </nav>
         </div>
-        <a href="#">Starfsfólk</a>
-        <a href="#">Tenglar</a>
-        <a href="#">Innranet</a>
-    </nav>
-</div>
-        <div class="intro">
-            <h1>Velkomin á síðu Móraf ehf.</h1>
-            <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
-        </div>
-    </div>
+    </header>
     <main>
-        <div class="news">
-            <h2>Frétt dagsins</h2>
-            <p>Hér er smá texti um fyrirtækið...</p>
-        </div>
-        <div class="slideshow">
-            <img src="mynd1.jpg" alt="Mynd 1">
-            <img src="mynd2.jpg" alt="Mynd 2">
-            <img src="mynd3.jpg" alt="Mynd 3">
-        </div>
+        <h2>Frétt dagsins</h2>
+        <p>Hér er smá texti um fyrirtækið...</p>
     </main>
     <footer>
-        <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470 , Allur réttur áskilinn.</p>
-        <small>Þessi síða var hönnuð af chatgpt4 gervigreind</small>
+        <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470</p>
+        <p><small>Þessi síða var hönnuð af chatgpt4 gervigreind</small></p>
     </footer>
-    <script>
-        var dropdown = document.getElementsByClassName("dropdown");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-            } else {
-            dropdownContent.style.display = "block";
-            }
-            });
-        }
-    </script>
 </body>
 </html>
