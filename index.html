@@ -15,8 +15,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f8f8;
             padding: 20px;
+            background: url('background.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
 
         .header-top .logo img {
@@ -29,7 +33,7 @@
         }
 
         .header-top .menu a {
-            color: gray;
+            color: white;
             text-decoration: none;
         }
 
@@ -54,13 +58,6 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
-        }
-
-        .welcome-text {
-            flex-grow: 1;
-            text-align: center;
-            padding: 20px;
-            white-space: nowrap;
         }
 
         main {
@@ -95,10 +92,6 @@
 <body>
     <header class="header-top">
         <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
-        <div class="welcome-text">
-            <h1>Velkomin á síðu Móraf ehf.</h1>
-            <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
-        </div>
         <nav class="menu">
             <a href="index.html" class="active">Heim</a>
             <div class="dropdown">
