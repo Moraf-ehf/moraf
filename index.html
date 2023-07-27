@@ -6,141 +6,95 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
-        .header-top {
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
             background-color: #f8f8f8;
+            padding: 20px;
         }
 
-        .header-top .logo img {
+        header .logo img {
             width: 10%;
         }
 
-        .header-top .menu {
+        header .menu {
             display: flex;
             gap: 20px;
         }
 
-        .header-top .menu a {
+        header .menu a {
             text-decoration: none;
-            color: gray;
+            color: #555;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        header .menu a:hover {
+            font-weight: bold;
         }
 
-        .dropdown-content {
+        header .menu .dropdown-content {
             display: none;
             position: absolute;
+            background-color: #f1f1f1;
             min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
 
-        .dropdown-content a {
+        header .menu .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            text-align: left;
         }
 
-        .dropdown:hover .dropdown-content {
+        header .menu .dropdown:hover .dropdown-content {
             display: block;
         }
 
         main {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             padding: 20px;
+            gap: 20px;
         }
 
-        .content {
-            border: 1px solid gray;
+        .main-content {
+            flex: 2;
+            border: 1px solid #ccc;
             padding: 20px;
-            margin: auto;
-            margin-top: 100px;
-            background-color: #f8f8f8;
-            border-radius: 10px;
-            width: 60%;
-            max-width: 800px;
-            flex-grow: 1;
-            text-align: center;
+            margin: 20px;
         }
 
-        .images {
-            padding-left: 30px;
+        .main-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .images img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
-            cursor: pointer;
+        .main-images img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
         }
 
         footer {
-            background-color: #d0d0d0;
-            color: black;
             text-align: center;
             padding: 20px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Style for the modal image view */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover, .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
+            background-color: #d0d0d0;
         }
     </style>
 </head>
 <body>
-    <header class="header-top">
+    <header>
         <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
         <nav class="menu">
-            <a href="index.html" class="active">Heim</a>
             <div class="dropdown">
-                <a href="#">Verktaka</a>
+                <a href="javascript:void(0)">Verktaka</a>
                 <div class="dropdown-content">
                     <a href="#">Umsókn um verktöku</a>
                     <a href="#">Fyrri verkefni</a>
@@ -152,55 +106,19 @@
         </nav>
     </header>
     <main>
-        <div class="content">
+        <div class="main-content">
             <h2>Frétt dagsins</h2>
-            <p>Hér er smá texti um fyrirtækið...
-            <br>.
-            <br>.
-            <br>.
-            <br>.   
-            <br>.
-            <br>.    
-            </p>
-            <hr>
-            <div class="images">
-                <img id="myImg1" src="mynd1.jpg" alt="Mynd 1">
-                <img id="myImg2" src="mynd2.jpg" alt="Mynd 2">
-            </div>
+            <p>Hér er smá texti um fyrirtækið...</p>
+        </div>
+        <div class="main-images">
+            <img src="https://via.placeholder.com/200" alt="Mynd 1">
+            <img src="https://via.placeholder.com/200" alt="Mynd 2">
+            <img src="https://via.placeholder.com/200" alt="Mynd 3">
         </div>
     </main>
     <footer>
         <p>© 2023 Móraf ehf, Móhellu 9, 800 Selfoss, Sími: 615 1983 | Kennitala 591022-0240, vsk.nr. 146470</p>
-        <p><small>Þessi síða var hönnuð af chatgpt4 gervigreind</small></p>
+        <p>Þessi síða var hönnuð af chatgpt4 gervigreind</p>
     </footer>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the images and bind the onclick event
-        var images = document.getElementsByClassName("images")[0].getElementsByTagName("img");
-        for(let i=0; i<images.length; i++) {
-            let img = images[i];
-            img.onclick = function() {
-                modal.style.display = "block";
-                document.getElementById("img01").src = this.src;
-            }
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-    </script>
 </body>
 </html>
