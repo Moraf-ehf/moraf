@@ -28,6 +28,11 @@
             gap: 20px;
         }
 
+        .header-top .menu a {
+            color: gray;
+            text-decoration: none;
+        }
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -51,16 +56,22 @@
             display: block;
         }
 
+        .welcome-text {
+            text-align: center;
+            padding: 20px;
+        }
+
         main {
             display: flex;
             justify-content: space-around;
             padding: 20px;
         }
 
-        .news {
+        .content {
             border: 1px solid gray;
             padding: 20px;
-            width: 40%;
+            width: 80%;
+            margin: auto;
         }
 
         .images img {
@@ -97,17 +108,19 @@
                 <a href="#">Innranet</a>
             </nav>
         </div>
+        <div class="welcome-text">
+            <h1>Velkomin á síðu Móraf ehf.</h1>
+            <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
+        </div>
     </header>
     <main>
-        <div class="news">
-            <h1 style="text-align: center;">Velkomin á síðu Móraf ehf.</h1>
-            <p style="text-align: center;">Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
+        <div class="content">
             <h2>Frétt dagsins</h2>
             <p>Hér er smá texti um fyrirtækið...</p>
-        </div>
-        <div class="images">
-            <img src="mynd1.jpg" alt="Mynd 1">
-            <img src="mynd2.jpg" alt="Mynd 2">
+            <div class="images">
+                <img src="mynd1.jpg" alt="Mynd 1">
+                <img src="mynd2.jpg" alt="Mynd 2">
+            </div>
         </div>
     </main>
     <footer>
