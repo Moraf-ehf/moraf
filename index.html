@@ -57,6 +57,7 @@
         }
 
         .welcome-text {
+            flex-grow: 1;
             text-align: center;
             padding: 20px;
         }
@@ -91,27 +92,24 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
-            <nav class="menu">
-                <a href="index.html" class="active">Heim</a>
-                <div class="dropdown">
-                    <a href="#">Verktaka</a>
-                    <div class="dropdown-content">
-                        <a href="#">Umsókn um verktöku</a>
-                        <a href="#">Fyrri verkefni</a>
-                    </div>
-                </div>
-                <a href="#">Starfsfólk</a>
-                <a href="#">Tenglar</a>
-                <a href="#">Innranet</a>
-            </nav>
-        </div>
+    <header class="header-top">
+        <div class="logo"><img src="Transparent Logo.png" alt="Logo fyrirtækisins"></div>
         <div class="welcome-text">
             <h1>Velkomin á síðu Móraf ehf.</h1>
-            <p>Móraf er lítið fyrirtæki sem rekið er utan reglubundins vinnutíma (í frístundum).</p>
         </div>
+        <nav class="menu">
+            <a href="index.html" class="active">Heim</a>
+            <div class="dropdown">
+                <a href="#">Verktaka</a>
+                <div class="dropdown-content">
+                    <a href="#">Umsókn um verktöku</a>
+                    <a href="#">Fyrri verkefni</a>
+                </div>
+            </div>
+            <a href="#">Starfsfólk</a>
+            <a href="#">Tenglar</a>
+            <a href="#">Innranet</a>
+        </nav>
     </header>
     <main>
         <div class="content">
